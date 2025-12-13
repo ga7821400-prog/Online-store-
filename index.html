@@ -3,51 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Tienda Web</title>
+  <title>Marketplace Global</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-      <h1>Mi Tienda Web</h1>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#productos">Productos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <div class="logo">
+    <h1>Global Marketplace</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#carrito">Carrito</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <section class="hero">
-    <h2>Encuentra los mejores productos al mejor precio</h2>
-    <p>Con envío rápido y promociones exclusivas</p>
+<section class="hero">
+  <h2>Los mejores productos y viajes al alcance de tu mano</h2>
+  <p>Compra tecnología, ropa, vuelos y hoteles con descuentos exclusivos</p>
+</section>
+
+<main>
+  <section id="productos">
+    <h2>Productos Destacados</h2>
+    <div class="categoria-filtros">
+      <button data-categoria="Todos">Todos</button>
+      <button data-categoria="Tecnología">Tecnología</button>
+      <button data-categoria="Ropa">Ropa</button>
+      <button data-categoria="Vuelos">Vuelos</button>
+      <button data-categoria="Hoteles">Hoteles</button>
+    </div>
+    <div id="lista-productos" class="productos-container"></div>
   </section>
 
-  <main>
-    <section id="productos">
-      <h2>Productos Destacados</h2>
-      <div id="lista-productos" class="productos-container">
-        <!-- Productos generados con JS -->
-      </div>
-    </section>
+  <section id="carrito">
+    <h2>Carrito de Compras</h2>
+    <div id="carrito-lista"></div>
+    <p id="total">Total: $0</p>
+    <button id="pagar">Pagar</button>
+  </section>
 
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <form id="form-contacto">
-        <input type="text" id="nombre" placeholder="Nombre" required>
-        <input type="email" id="email" placeholder="Email" required>
-        <textarea id="mensaje" placeholder="Mensaje" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-  </main>
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form id="form-contacto">
+      <input type="text" id="nombre" placeholder="Nombre" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <textarea id="mensaje" placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+</main>
 
-  <footer>
-    <p>© 2025 Mi Tienda Web | Todos los derechos reservados</p>
-  </footer>
+<footer>
+  <p>© 2025 Global Marketplace | Todos los derechos reservados</p>
+</footer>
 
-  <script src="script.js" defer></script>
+<script src="script.js" defer></script>
 </body>
 </html>
