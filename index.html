@@ -2,42 +2,48 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Tienda Online Global</title>
+  <title>Global Market</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1>🛒 Tienda Online Global</h1>
-  <button onclick="mostrarCheckout()">🧾 Ver Carrito</button>
+  <h1>🌍 Global Market</h1>
+  <p>Las mejores marcas • Los mejores precios • Todo en un solo lugar</p>
 </header>
 
-<!-- PRODUCTOS -->
-<section id="productos" class="grid"></section>
+<nav>
+  <button onclick="filtrar('todos')">🔥 Ofertas</button>
+  <button onclick="filtrar('tecnologia')">📱 Tecnología</button>
+  <button onclick="filtrar('ropa')">👕 Ropa</button>
+  <button onclick="filtrar('vuelos')">✈️ Vuelos</button>
+  <button onclick="filtrar('hoteles')">🏨 Hoteles</button>
+  <button class="carrito-btn" onclick="mostrarCheckout()">🛒 Carrito</button>
+</nav>
 
-<!-- CHECKOUT -->
-<section id="checkout" class="checkout oculto">
-  <h2>Checkout</h2>
+<main>
+  <section id="productos" class="grid"></section>
 
-  <div id="carrito"></div>
+  <section id="checkout" class="checkout oculto">
+    <h2>🧾 Checkout</h2>
 
-  <h3>Dirección de envío</h3>
-  <input type="text" placeholder="Nombre completo">
-  <input type="text" placeholder="Dirección">
-  <input type="text" placeholder="País">
-  <input type="email" placeholder="Email">
+    <div id="carrito"></div>
 
-  <button onclick="pagar()">Proceder al pago</button>
-</section>
+    <h3>📦 Dirección de envío</h3>
+    <input id="nombre" placeholder="Nombre completo">
+    <input id="direccion" placeholder="Dirección">
+    <input id="pais" placeholder="País">
+    <input id="email" type="email" placeholder="Email">
+
+    <button class="pagar" onclick="pagar()">Continuar al pago</button>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Global Market • Marketplace internacional</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
 </html>
-
-<nav>
-  <button onclick="filtrar('tecnologia')">Tecnología</button>
-  <button onclick="filtrar('ropa')">Ropa</button>
-  <button onclick="filtrar('vuelos')">Vuelos</button>
-  <button onclick="filtrar('hoteles')">Hoteles</button>
-</nav>
