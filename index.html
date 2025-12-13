@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Global Marketplace</title>
+<title>Global Marketplace Real</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -10,21 +10,28 @@
 
 <header>
   <h1>🌍 Global Marketplace</h1>
-  <p>Marketplace global • Tecnología • Moda • Vuelos • Hoteles • Gadgets</p>
+  <p>Productos reales con precios reales</p>
 </header>
 
 <nav>
-  <button onclick="filtrar('todos')">🔥 Ofertas</button>
-  <button onclick="filtrar('tecnologia')">📱 Tecnología</button>
-  <button onclick="filtrar('ropa')">👕 Ropa</button>
-  <button onclick="filtrar('vuelos')">✈️ Vuelos</button>
-  <button onclick="filtrar('hoteles')">🏨 Hoteles</button>
-  <button onclick="filtrar('gadgets')">🔌 Gadgets</button>
+  <button onclick="cargarProductos('tecnologia')">📱 Tecnología</button>
+  <button onclick="cargarProductos('ropa')">👕 Moda</button>
+  <button onclick="cargarProductos('gadgets')">🔌 Gadgets</button>
+  <button onclick="mostrarFlightsForm()">✈️ Vuelos</button>
   <button class="carrito-btn" onclick="mostrarCheckout()">🛒 Carrito</button>
 </nav>
 
 <main>
   <section id="productos" class="grid"></section>
+
+  <section id="flights-section" class="oculto">
+    <h2>Buscar Vuelos</h2>
+    <input id="origin" placeholder="Origen (ej: NYC)">
+    <input id="destination" placeholder="Destino (ej: LAX)">
+    <input id="date" type="date">
+    <button onclick="buscarVuelos()">Buscar</button>
+    <div id="flights-results"></div>
+  </section>
 
   <section id="checkout" class="checkout oculto">
     <h2>🧾 Checkout</h2>
@@ -36,15 +43,19 @@
     <select id="pais"></select>
     <input id="email" type="email" placeholder="Email">
 
-    <button class="pagar" onclick="pagar()">Pagar y enviar orden</button>
+    <button onclick="crearStripeSession()">Pagar ahora</button>
   </section>
 </main>
+
+<div id="lightbox" class="lightbox oculto">
+  <span onclick="cerrarLightbox()" class="close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+</div>
 
 <footer>
   <p>© 2025 Global Marketplace</p>
 </footer>
 
-<script src="https://js.stripe.com/v3/"></script>
 <script src="script.js"></script>
 </body>
 </html>
