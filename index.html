@@ -10,7 +10,7 @@
 
 <header>
   <h1>🌍 Global Market</h1>
-  <p>Las mejores marcas • Los mejores precios • Todo en un solo lugar</p>
+  <p>Marketplace global • Tecnología • Viajes • Moda</p>
 </header>
 
 <nav>
@@ -30,10 +30,12 @@
 
     <div id="carrito"></div>
 
-    <h3>📦 Dirección de envío</h3>
+    <h3>📦 Datos de envío</h3>
     <input id="nombre" placeholder="Nombre completo">
-    <input id="direccion" placeholder="Dirección">
-    <input id="pais" placeholder="País">
+    <input id="direccion" placeholder="Dirección completa">
+
+    <select id="pais"></select>
+
     <input id="email" type="email" placeholder="Email">
 
     <button class="pagar" onclick="pagar()">Continuar al pago</button>
@@ -41,9 +43,10 @@
 </main>
 
 <footer>
-  <p>© 2025 Global Market • Marketplace internacional</p>
+  <p>© 2025 Global Market</p>
 </footer>
 
+<script src="https://js.stripe.com/v3/"></script>
 <script src="script.js"></script>
 </body>
 </html>
