@@ -1,5 +1,4 @@
 * { box-sizing: border-box; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto; }
-
 body { margin: 0; background: #f4f6f8; }
 
 header {
@@ -9,77 +8,17 @@ header {
   padding: 30px 15px;
 }
 
-nav {
-  display: flex;
-  gap: 10px;
-  padding: 10px;
-  background: white;
-  position: sticky;
-  top: 0;
-  overflow-x: auto;
-}
-
-nav button {
-  border: none;
-  padding: 10px 16px;
-  border-radius: 20px;
-  background: #eee;
-  cursor: pointer;
-}
-
+nav { display: flex; gap: 10px; padding: 10px; background: white; position: sticky; top: 0; overflow-x: auto; }
+nav button { border: none; padding: 10px 16px; border-radius: 20px; background: #eee; cursor: pointer; }
 .carrito-btn { background: #0a8f08; color: white; }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap: 16px;
-  padding: 20px;
-}
-
-.card {
-  background: white;
-  border-radius: 14px;
-  padding: 15px;
-  box-shadow: 0 6px 14px rgba(0,0,0,.1);
-}
-
+.grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 16px; padding: 20px; }
+.card { background: white; border-radius: 14px; padding: 15px; box-shadow: 0 6px 14px rgba(0,0,0,.1); }
 .card img { width: 100%; border-radius: 10px; }
+.card button { width: 100%; background: #243b55; color: white; border: none; padding: 10px; border-radius: 8px; cursor: pointer; }
 
-.card button {
-  width: 100%;
-  background: #243b55;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.checkout {
-  background: white;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 14px;
-}
-
-input, select {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-.pagar {
-  background: #0a8f08;
-  color: white;
-  padding: 14px;
-  width: 100%;
-  border-radius: 10px;
-  font-size: 16px;
-  border: none;
-}
-
+.checkout { background: white; margin: 20px; padding: 20px; border-radius: 14px; }
+input, select { width: 100%; padding: 10px; margin: 8px 0; border-radius: 6px; border: 1px solid #ccc; }
+.pagar { background: #0a8f08; color: white; padding: 14px; width: 100%; border-radius: 10px; font-size: 16px; border: none; }
 .oculto { display: none; }
-
 footer { text-align: center; padding: 20px; color: #777; }
