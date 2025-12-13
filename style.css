@@ -22,6 +22,7 @@ h2 { text-align:center; margin-bottom:20px; color:#222; }
 .producto button:hover { background:#ff6600; }
 #carrito-lista { max-width:600px; margin:0 auto 10px; }
 #total { text-align:center; font-size:1.2rem; margin-bottom:10px; }
+#metodo-pago { max-width:300px; margin:0 auto 10px; text-align:center; }
 #pagar { display:block; margin:0 auto 30px; padding:10px 20px; font-size:1rem; background:#222; color:#fff; border:none; cursor:pointer; border-radius:5px; transition:0.3s; }
 #pagar:hover { background:#ff6600; }
 form { max-width:500px; margin:0 auto; display:flex; flex-direction:column; gap:15px; }
@@ -29,3 +30,5 @@ form input, form textarea, form button { padding:12px; font-size:1rem; border-ra
 form button { background:#222; color:#fff; border:none; cursor:pointer; transition:0.3s; }
 form button:hover { background:#ff6600; }
 footer { background:#222; color:#fff; text-align:center; padding:15px 0; margin-top:40px; }
+/* Responsive */
+@media(max-width:768px){ .productos-container { grid-template-columns: repeat(auto-fill,minmax(160px,1fr)); } .hero h2{font-size:1.8rem;} }
