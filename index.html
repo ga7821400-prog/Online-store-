@@ -1,42 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Global Marketplace</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Global Marketplace · Demo</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="topbar">
+    <div class="brand">🌍 Global Marketplace</div>
+    <div class="controls">
+      <input id="search" placeholder="Buscar producto, destino, marca..." />
+      <button id="searchBtn">Buscar</button>
+      <button id="cartToggle">🛒 <span id="cartCount">0</span></button>
+    </div>
+  </header>
 
-<header>
-  <h1>🌍 Global Marketplace</h1>
-  <button onclick="toggleCart()">🛒 Carrito (<span id="cart-count">0</span>)</button>
-</header>
+  <section class="hero">
+    <h1>Compra productos, reserva vuelos y hoteles, encuentra voluntariados</h1>
+    <p>Catálogo global simulado. Usa el buscador para obtener sugerencias y destinos relacionados.</p>
+  </section>
 
-<section class="filters">
-  <button onclick="filter('ALL')">Todos</button>
-  <button onclick="filter('TECH')">Tecnología</button>
-  <button onclick="filter('FASHION')">Ropa</button>
-  <button onclick="filter('FLIGHT')">Vuelos</button>
-  <button onclick="filter('HOTEL')">Hoteles</button>
-</section>
+  <nav class="filters">
+    <select id="categoryFilter">
+      <option value="ALL">Todas las categorías</option>
+      <option value="TECH">Tecnología</option>
+      <option value="FASHION">Ropa</option>
+      <option value="ACCESSORY">Accesorios</option>
+      <option value="FLIGHT">Vuelos</option>
+      <option value="HOTEL">Hoteles</option>
+      <option value="VOLUNTEER">Voluntariado</option>
+    </select>
+    <select id="continentFilter">
+      <option value="ALL">Todos los continentes</option>
+      <option value="AF">África</option>
+      <option value="AN">Antártida</option>
+      <option value="AS">Asia</option>
+      <option value="EU">Europa</option>
+      <option value="NA">Norteamérica</option>
+      <option value="OC">Oceanía</option>
+      <option value="SA">Sudamérica</option>
+    </select>
+    <select id="sortBy">
+      <option value="relevance">Más relevantes</option>
+      <option value="priceAsc">Precio ↑</option>
+      <option value="priceDesc">Precio ↓</option>
+    </select>
+  </nav>
 
-<section id="products"></section>
+  <main>
+    <aside id="leftPanel" class="hidden">
+      <h3>Carrito</h3>
+      <div id="cartItems"></div>
+      <div class="cartSummary">
+        <div>Total: $<span id="cartTotal">0</span></div>
+        <button id="checkoutBtn">Checkout</button>
+      </div>
+    </aside>
 
-<section id="cart" class="hidden">
-  <h2>Checkout</h2>
+    <section id="catalog">
+      <div id="productsGrid" class="grid"></div>
+      <div id="pagination"></div>
+    </section>
+  </main>
 
-  <div id="cart-items"></div>
-  <h3>Total: $<span id="total">0</span></h3>
+  <!-- Product modal -->
+  <div id="productModal" class="modal hidden">
+    <div class="modalContent">
+      <button class="closeModal">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
 
-  <h3>Datos del cliente</h3>
-  <input id="name" placeholder="Nombre completo">
-  <input id="email" placeholder="Email">
-  <input id="address" placeholder="Dirección / Hotel / Ciudad">
+  <!-- Checkout modal -->
+  <div id="checkoutModal" class="modal hidden">
+    <div class="modalContent">
+      <button class="closeModal">×</button>
+      <h2>Checkout - Datos del cliente</h2>
+      <form id="checkoutForm">
+        <input id="custName" placeholder="Nombre completo" required />
+        <input id="custEmail" placeholder="Email" required type="email"/>
+        <input id="custPhone" placeholder="Teléfono (opcional)" />
+        <input id="custAddress" placeholder="Dirección (para envíos/agendas)" />
+        <label>¿Deseas agregar instrucciones al proveedor?</label>
+        <textarea id="custNotes" placeholder="Instrucciones"></textarea>
+        <div class="checkoutActions">
+          <div>Comisión de marketplace (10%): $<span id="checkoutCommission">0</span></div>
+          <div>Total a pagar: $<span id="checkoutTotal">0</span></div>
+        </div>
+        <button type="submit">Generar orden y pagar (Simulado)</button>
+      </form>
+    </div>
+  </div>
 
-  <button onclick="submitOrder()">Generar Orden</button>
-</section>
+  <footer>
+    <p>Demo: Catálogo simulado con generación masiva. Listo para integrar pagos de forma real (Stripe Connect / PayPal).</p>
+  </footer>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
