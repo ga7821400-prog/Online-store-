@@ -1,38 +1,36 @@
 * {
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
 }
 
 body {
   margin: 0;
   background: #f4f6f8;
-  color: #222;
 }
 
 header {
-  background: linear-gradient(135deg, #000428, #004e92);
+  background: linear-gradient(135deg, #141e30, #243b55);
   color: white;
-  padding: 30px 15px;
   text-align: center;
+  padding: 30px 15px;
 }
 
 nav {
   display: flex;
   gap: 10px;
-  overflow-x: auto;
   padding: 10px;
   background: white;
   position: sticky;
   top: 0;
+  overflow-x: auto;
 }
 
 nav button {
   border: none;
-  background: #eee;
   padding: 10px 16px;
   border-radius: 20px;
+  background: #eee;
   cursor: pointer;
-  white-space: nowrap;
 }
 
 .carrito-btn {
@@ -42,8 +40,8 @@ nav button {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 16px;
   padding: 20px;
 }
 
@@ -51,39 +49,26 @@ nav button {
   background: white;
   border-radius: 14px;
   padding: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.08);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.card h3 {
-  font-size: 16px;
-  margin: 0;
-}
-
-.card small {
-  color: #777;
+  box-shadow: 0 6px 14px rgba(0,0,0,.1);
 }
 
 .card button {
-  margin-top: 10px;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  background: #004e92;
+  width: 100%;
+  background: #243b55;
   color: white;
-  cursor: pointer;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
 }
 
 .checkout {
   background: white;
-  padding: 20px;
   margin: 20px;
-  border-radius: 12px;
+  padding: 20px;
+  border-radius: 14px;
 }
 
-input {
+input, select {
   width: 100%;
   padding: 10px;
   margin: 8px 0;
@@ -92,21 +77,15 @@ input {
 }
 
 .pagar {
-  width: 100%;
   background: #0a8f08;
   color: white;
   padding: 14px;
+  width: 100%;
   border-radius: 10px;
-  border: none;
   font-size: 16px;
+  border: none;
 }
 
 .oculto {
   display: none;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #777;
 }
