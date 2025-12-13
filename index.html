@@ -9,66 +9,34 @@
 <body>
 
 <header>
-  <div class="logo">
-    <h1>Global Marketplace</h1>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="#productos">Productos</a></li>
-      <li><a href="#carrito">Carrito</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
+  <h1>🌍 Global Marketplace</h1>
+  <button onclick="toggleCart()">🛒 Carrito (<span id="cart-count">0</span>)</button>
 </header>
 
-<section class="hero">
-  <h2>Compra productos, reserva viajes y hoteles globalmente</h2>
-  <p>Marcas reconocidas, aerolíneas y hoteles en un solo lugar</p>
+<section class="filters">
+  <button onclick="filter('ALL')">Todos</button>
+  <button onclick="filter('TECH')">Tecnología</button>
+  <button onclick="filter('FASHION')">Ropa</button>
+  <button onclick="filter('FLIGHT')">Vuelos</button>
+  <button onclick="filter('HOTEL')">Hoteles</button>
 </section>
 
-<main>
-  <section id="productos">
-    <h2>Productos y Servicios</h2>
-    <div class="categoria-filtros">
-      <button data-categoria="Todos">Todos</button>
-      <button data-categoria="Tecnología">Tecnología</button>
-      <button data-categoria="Ropa">Ropa</button>
-      <button data-categoria="Vuelos">Vuelos</button>
-      <button data-categoria="Hoteles">Hoteles</button>
-    </div>
-    <div id="lista-productos" class="productos-container"></div>
-  </section>
+<section id="products"></section>
 
-  <section id="carrito">
-    <h2>Carrito de Compras</h2>
-    <div id="carrito-lista"></div>
-    <p id="total">Total: $0</p>
-    <div id="metodo-pago">
-      <label>Seleccione método de pago:</label>
-      <select id="pago-seleccion">
-        <option value="Tarjeta">Tarjeta</option>
-        <option value="PayPal">PayPal</option>
-        <option value="Cripto">Cripto</option>
-      </select>
-    </div>
-    <button id="pagar">Pagar</button>
-  </section>
+<section id="cart" class="hidden">
+  <h2>Checkout</h2>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <form id="form-contacto">
-      <input type="text" id="nombre" placeholder="Nombre" required>
-      <input type="email" id="email" placeholder="Email" required>
-      <textarea id="mensaje" placeholder="Mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
-</main>
+  <div id="cart-items"></div>
+  <h3>Total: $<span id="total">0</span></h3>
 
-<footer>
-  <p>© 2025 Global Marketplace | Todos los derechos reservados</p>
-</footer>
+  <h3>Datos del cliente</h3>
+  <input id="name" placeholder="Nombre completo">
+  <input id="email" placeholder="Email">
+  <input id="address" placeholder="Dirección / Hotel / Ciudad">
 
-<script src="script.js" defer></script>
+  <button onclick="submitOrder()">Generar Orden</button>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
