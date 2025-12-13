@@ -10,10 +10,26 @@
 
 <header>
   <h1>🛒 Tienda Online Global</h1>
-  <p>Envíos internacionales | Ofertas diarias</p>
+  <button onclick="mostrarCheckout()">🧾 Ver Carrito</button>
 </header>
 
+<!-- PRODUCTOS -->
 <section id="productos" class="grid"></section>
+
+<!-- CHECKOUT -->
+<section id="checkout" class="checkout oculto">
+  <h2>Checkout</h2>
+
+  <div id="carrito"></div>
+
+  <h3>Dirección de envío</h3>
+  <input type="text" placeholder="Nombre completo">
+  <input type="text" placeholder="Dirección">
+  <input type="text" placeholder="País">
+  <input type="email" placeholder="Email">
+
+  <button onclick="pagar()">Proceder al pago</button>
+</section>
 
 <script src="script.js"></script>
 </body>
