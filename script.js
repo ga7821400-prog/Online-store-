@@ -47,4 +47,27 @@ const productos = [
     precio: 480,
     proveedor: "Booking"
   }
+  const contenedor = document.getElementById("productos");
+
+function mostrar(lista) {
+  contenedor.innerHTML = "";
+  lista.forEach((p, i) => {
+    contenedor.innerHTML += `
+      <div class="card">
+        <h3>${p.nombre}</h3>
+        <p>${p.marca}</p>
+        <p>$${p.precio}</p>
+        <small>Proveedor: ${p.proveedor}</small>
+        <button onclick="agregar(${i})">Agregar</button>
+      </div>
+    `;
+  });
+}
+
+function filtrar(categoria) {
+  const filtrados = productos.filter(p => p.categoria === categoria);
+  mostrar(filtrados);
+}
+
+mostrar(productos);
 ];
