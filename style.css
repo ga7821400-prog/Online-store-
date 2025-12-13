@@ -1,5 +1,4 @@
 * { box-sizing: border-box; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto; }
-
 body { margin: 0; background: #f4f6f8; }
 
 header {
@@ -51,7 +50,7 @@ nav button {
   width: 100%;
   border-radius: 10px;
   object-fit: cover;
-  height: 180px;
+  height: 200px;
 }
 
 .card h3 { margin: 10px 0 5px 0; font-size: 16px; }
@@ -74,3 +73,16 @@ input, select { width: 100%; padding: 10px; margin: 8px 0; border-radius: 6px; b
 .oculto { display: none; }
 
 footer { text-align: center; padding: 20px; color: #777; }
+
+/* Carrusel de miniaturas */
+.card .miniaturas {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+}
+.card .miniaturas img {
+  width: 40px;
+  cursor: pointer;
+  border-radius: 6px;
+  object-fit: cover;
+}
