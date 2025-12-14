@@ -19,21 +19,21 @@ app.post("/create-checkout-session", async (req, res) => {
           price_data: {
             currency: "usd",
             product_data: { name },
-            unit_amount: price * 100,
+            unit_amount: price * 100
           },
-          quantity: 1,
-        },
+          quantity: 1
+        }
       ],
       success_url: "http://localhost:5500/frontend/success.html",
-      cancel_url: "http://localhost:5500/frontend/cancel.html",
+      cancel_url: "http://localhost:5500/frontend/cancel.html"
     });
 
     res.json({ url: session.url });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 });
 
-app.listen(4242, () =>
-  console.log("✅ Backend activo en http://localhost:4242")
-);
+app.listen(4242, () => {
+  console.log("✅ Backend activo en http://localhost:4242");
+});
