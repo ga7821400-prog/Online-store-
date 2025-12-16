@@ -59,4 +59,34 @@ button {
 
 button:hover {
   background: #004fd8;
+  /* IMÁGENES DE PRODUCTOS */
+.product-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* BOTÓN DE PAGO */
+.pay-btn {
+  background: #0a7cff;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.pay-btn:hover {
+  background: #055fd4;
+}
+
 }
