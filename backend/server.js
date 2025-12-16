@@ -36,4 +36,12 @@ app.post("/create-checkout-session", async (req, res) => {
 
 app.listen(4242, () => {
   console.log("✅ Backend activo en http://localhost:4242");
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(product) {
+  cart.push(product);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("Producto agregado al carrito 🛒");
+}
+
 });
