@@ -544,5 +544,19 @@ async function pay(name, price) {
     image: "images/products/phone.webp"
   }
 ];
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
+const summary = document.getElementById("checkout-summary");
+
+let total = 0;
+cart.forEach(item => {
+  total += item.price;
+  summary.innerHTML += `<p>${item.name} - $${item.price}</p>`;
+});
+
+summary.innerHTML += `<h3>Total: $${total}</h3>`;
+
+function payWithStripe() {
+  window.location.href = "https://buy.stripe.com/TU_LINK_DE_STRIPE";
+}
 
 }
