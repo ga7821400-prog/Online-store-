@@ -530,4 +530,19 @@ async function pay(name, price) {
 
   const data = await response.json();
   window.location.href = data.url;
+  const products = [
+  {
+    id: 1,
+    name: "Laptop Gamer",
+    price: 900,
+    image: "images/products/laptop.webp"
+  },
+  {
+    id: 2,
+    name: "Smartphone",
+    price: 500,
+    image: "images/products/phone.webp"
+  }
+];
+
 }
