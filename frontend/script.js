@@ -58,10 +58,10 @@ function randInt(min,max){ return Math.floor(Math.random()*(max-min+1))+min; }
 function pick(arr){ return arr[randInt(0,arr.length-1)]; }
 
 // imagenes: usamos Unsplash "random" by query to get varied photos
-function imageFor(query, w=640, h=480){
-  // Use unsplash source with query words (works in demo; for production register own images)
-  const q = encodeURIComponent(query);
-  return `https://source.unsplash.com/${w}x${h}/?${q}`;
+function imageFor(){
+  return "./images/products/laptop.webp";
+}
+
 }
 
 /* ------------- Generador de catálogo ------------- */
@@ -449,9 +449,11 @@ function openCheckout(){
   checkoutTotal.innerText = formatPrice(total);
   checkoutModal.classList.remove('hidden');
 }
-
-checkoutForm.addEventListener('submit', async (e) => {
+ checkoutForm.addEventListener('submit', (e) => {
   e.preventDefault();
+  alert("✅ Orden generada correctamente (simulado).\nRedirigiendo al pago…");
+  window.location.href = "https://buy.stripe.com/TU_LINK_REAL";
+});
   const customer = {
     name: document.getElementById('custName').value,
     email: document.getElementById('custEmail').value,
@@ -464,7 +466,7 @@ checkoutForm.addEventListener('submit', async (e) => {
   const payloadCart = CART.map(i => ({ id:i.id, name:i.name, price:i.price, quantity:i.quantity||1, providerId:i.providerId, providerName:i.providerName, category:i.category }));
   // send to server
   try{
-    const resp = await fetch('/order', {
+    const resp = await {
       method:'POST',
       headers:{ 'Content-Type':'application/json' },
       body: JSON.stringify({ cart: payloadCart, customer })
@@ -521,7 +523,7 @@ function removeFromCart(id){ CART = CART.filter(i=>i.id!==id); updateCartUI(); }
 // initial render
 applyFilters();
 updateCartUI();
-async function pay(name, price) {
+{
   const response = await fetch("http://localhost:4242/create-checkout-session", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
